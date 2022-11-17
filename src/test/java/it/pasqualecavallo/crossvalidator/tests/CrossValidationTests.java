@@ -91,4 +91,15 @@ public class CrossValidationTests {
 		Set<ConstraintViolation<CrossValidationTestModel>> violations = validator.validate(model);
 		assertEquals(0, violations.size());
 	}
+
+	@Test
+	public void testSuccess3() {
+		CrossValidationTestModel model = new CrossValidationTestModel();
+		model.setMustBeNotBlankGroup1("valid");
+		model.setMustBeNotBlankGroup1And2("valid");
+		model.setMustBeNotBlankGroup2("valid");
+		Set<ConstraintViolation<CrossValidationTestModel>> violations = validator.validate(model);
+		assertEquals(0, violations.size());
+	}
+
 }
